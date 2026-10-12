@@ -1,7 +1,7 @@
 import Foundation
 
 
-public enum WalkingMode {
+public enum WalkingMode: Hashable {
     case manual, automatic
 }
 

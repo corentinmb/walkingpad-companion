@@ -4,29 +4,23 @@ struct FooterView: View {
     @EnvironmentObject var walkingPadService: WalkingPadService
     @EnvironmentObject var workout: Workout
     @Environment(\.openURL) var openURL
-    
+
     var body: some View {
         HStack {
-            Spacer()
-            Button(action: {
-                openURL(URL(string: "https://walkingpad-stats.netlify.app")!)
-            }) {
-                Text("Stats")
+            Button { openURL(URL(string: "https://walkingpad-stats.netlify.app")!) } label: {
+                Label("Stats", systemImage: "chart.bar.xaxis")
             }
+            Spacer()
             LoginLogoutButton()
-            Button(action: {
+            Spacer()
+            Button {
                 walkingPadService.command()?.setSpeed(speed: 0)
                 workout.save()
                 exit(0)
-            }) {
-                Text("Quit")
+            } label: {
+                Label("Quit", systemImage: "power")
             }
         }
-    }
-}
-
-struct FooterView_Previews: PreviewProvider {
-    static var previews: some View {
-        FooterView()
+        .buttonStyle(WalkingpadQuietButtonStyle())
     }
 }

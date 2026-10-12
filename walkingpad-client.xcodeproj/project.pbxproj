@@ -1,0 +1,834 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+		005980F38BA266767CF4EE3E = {
+			fileRef = 8895EA55F9FA45E54DA3C5C4;
+			isa = PBXBuildFile;
+		};
+		036525505E278EBC3398A786 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = LoginWindowView.swift;
+			sourceTree = "<group>";
+		};
+		05B39C11FD9AF40A30C0B19C = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WalkingpadProgressRing.swift;
+			sourceTree = "<group>";
+		};
+		076D1CF0C98F7A8AA6F9189A = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = MenuBarPanel.swift;
+			sourceTree = "<group>";
+		};
+		0A2F9897A86D41C3FEF982F6 = {
+			isa = PBXBuildFile;
+			productRef = 24E9A356590425C78E9A5BBE;
+		};
+		0B7892C74724A9C91EF8266C = {
+			fileRef = 7203B5FD1407775D894B815A;
+			isa = PBXBuildFile;
+		};
+		170A2313995CEE1CF2E1591E = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = RepeatingTimer.swift;
+			sourceTree = "<group>";
+		};
+		1B7A594082F5ABF6334C45D8 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WalkingPadService.swift;
+			sourceTree = "<group>";
+		};
+		1D080C8ABDB7330EB1DEC77F = {
+			fileRef = E08B0952A0A1C3C3F33C9D7E;
+			isa = PBXBuildFile;
+		};
+		1DC093173DFD1C768E2A93B6 = {
+			fileRef = 95BBC3E780696D814A4D2A4D;
+			isa = PBXBuildFile;
+		};
+		24E9A356590425C78E9A5BBE = {
+			isa = XCSwiftPackageProductDependency;
+			package = 371B0D641D1BD83DA61E6409;
+			productName = MQTTNIO;
+		};
+		3685E330EC5277A9DD5661C6 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder.assetcatalog;
+			path = Assets.xcassets;
+			sourceTree = "<group>";
+		};
+		371B0D641D1BD83DA61E6409 = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sroebert/mqtt-nio.git";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.1;
+			};
+		};
+		3874C63E7640910656AEB826 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HCGatewayService.swift;
+			sourceTree = "<group>";
+		};
+		391EA383A613D5031A9D01B1 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = DeviceState.swift;
+			sourceTree = "<group>";
+		};
+		3BB5AA15741819D0095D0F2F = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = Workout.swift;
+			sourceTree = "<group>";
+		};
+		3F7D3C23FB60983AEBF74AB5 = {
+			fileRef = D264EF5C626621CAD2604DEE;
+			isa = PBXBuildFile;
+		};
+		43E4EE43A7AD5853B2DC1ADA = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = walkingpad_clientApp.swift;
+			sourceTree = "<group>";
+		};
+		44BB400A107FDFCB54C26D42 = {
+			fileRef = B96F679C6FA208C8BC0D3A4E;
+			isa = PBXBuildFile;
+		};
+		4A8EACC97EFAA31A762FF270 = {
+			fileRef = C1B2C2AC48DBA700B5C4AC61;
+			isa = PBXBuildFile;
+		};
+		4B74ADA517C5A3C2699CB2CE = {
+			fileRef = 637A6D619C6237F65B7CDB47;
+			isa = PBXBuildFile;
+		};
+		4FF77F01275EEB495764B340 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = BluetoothPeripheral.swift;
+			sourceTree = "<group>";
+		};
+		50B9185570255A34168E8059 = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7F21AA502FE7D90F9CC95EF;
+			productName = Embassy;
+		};
+		5707D6644D0B45114CFDFBFB = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = EmptyView.swift;
+			sourceTree = "<group>";
+		};
+		57D64CDC2FA607BD0587DDDB = {
+			fileRef = 5707D6644D0B45114CFDFBFB;
+			isa = PBXBuildFile;
+		};
+		5B2C72CC263468B800CE4F88 = {
+			children = (1B4FFFFBDA5103C7E9E4DCCA, 5B2C72D6263468B800CE4F88, EEFE21A1443933CA4DE017DA, C91938976F1A419925A88B81, BCB338BF6A2FB49A0486CA60, AA4ACA445B3FBAF47CDE31AC);
+			isa = PBXGroup;
+			sourceTree = "<group>";
+		};
+		5B2C72CD263468B800CE4F88 = {
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					5B2C72D4263468B800CE4F88 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 5B2C72D0263468B800CE4F88;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			isa = PBXProject;
+			knownRegions = (en, Base);
+			mainGroup = 5B2C72CC263468B800CE4F88;
+			packageReferences = (D7F21AA502FE7D90F9CC95EF, 371B0D641D1BD83DA61E6409);
+			productRefGroup = 5B2C72D6263468B800CE4F88;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (5B2C72D4263468B800CE4F88);
+		};
+		5B2C72D0263468B800CE4F88 = {
+			buildConfigurations = (5B2C72E3263468B900CE4F88, 5B2C72E4263468B900CE4F88);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+			isa = XCConfigurationList;
+		};
+		5B2C72D1263468B800CE4F88 = {
+			buildActionMask = 2147483647;
+			files = (C1879BAF2EBC80DCFD96AB7E, 836F277779BC42778D1519E0, 4B74ADA517C5A3C2699CB2CE, C17B8238E8B06652BD9159F1, 6C5C3FCE43391FD399152208, F09D1CF7648F7C1CF522195C, A642198472B06CCF1D3BF629, 96F55BAB069721B82E7AC0BC, ECB93A97F9D8BECB8B1A0538, 1DC093173DFD1C768E2A93B6, 940FB1A525FA171B2BA06CD3, E87A576BC3491CDB58F52647, 7C6D281F9E89290204559A83, 1D080C8ABDB7330EB1DEC77F, 9F6AF5910D3E91B39B53FA18, B89205BD3449C6221CFDC9BA, 77D2BFFE6FD64C90A02D7DC8, 9ED9F3EDF3CEDD95D361FF68, 63A4066E1F91C37894452C7B, 3F7D3C23FB60983AEBF74AB5, 005980F38BA266767CF4EE3E, 0B7892C74724A9C91EF8266C, 57D64CDC2FA607BD0587DDDB, 9BEBF595312E0F21CAC491C0, E02B70E2E631F7EFFE68A28A, 763A4F672263CE4B3A78898A, 6BFB36D20F5346332C16CCC4, D520219EFA46AE7F037D2790, 44BB400A107FDFCB54C26D42, 4A8EACC97EFAA31A762FF270, 6A09E5BCDC8483A33BF416D7, E85CC1A6CB8C3FB44040A2CF);
+			isa = PBXSourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2C72D2263468B800CE4F88 = {
+			buildActionMask = 2147483647;
+			files = (AE05D572DC36A6EA6E149B9F, 0A2F9897A86D41C3FEF982F6);
+			isa = PBXFrameworksBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2C72D3263468B800CE4F88 = {
+			buildActionMask = 2147483647;
+			files = (CF8A4D27E1C506A7C75A76BE);
+			isa = PBXResourcesBuildPhase;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B2C72D4263468B800CE4F88 = {
+			buildConfigurationList = 5B2C72E5263468B900CE4F88;
+			buildPhases = (5B2C72D1263468B800CE4F88, 5B2C72D2263468B800CE4F88, 5B2C72D3263468B800CE4F88);
+			buildRules = ();
+			dependencies = ();
+			isa = PBXNativeTarget;
+			name = "walkingpad-client";
+			packageProductDependencies = (50B9185570255A34168E8059, 24E9A356590425C78E9A5BBE);
+			productName = "walkingpad-client";
+			productReference = 5B2C72D5263468B800CE4F88;
+			productType = "com.apple.product-type.application";
+		};
+		5B2C72D5263468B800CE4F88 = {
+			explicitFileType = wrapper.application;
+			isa = PBXFileReference;
+			path = "Walkingpad Client.app";
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5B2C72D6263468B800CE4F88 = {
+			children = (5B2C72D5263468B800CE4F88);
+			isa = PBXGroup;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B2C72E3263468B900CE4F88 = {
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "walkingpad-client/walkingpad_client.entitlements";
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("DEBUG=1", "$(inherited)");
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			isa = XCBuildConfiguration;
+			name = Debug;
+		};
+		5B2C72E4263468B900CE4F88 = {
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "walkingpad-client/walkingpad_client.entitlements";
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			isa = XCBuildConfiguration;
+			name = Release;
+		};
+		5B2C72E5263468B900CE4F88 = {
+			buildConfigurations = (5B2C72E6263468B900CE4F88, 5B2C72E7263468B900CE4F88);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+			isa = XCConfigurationList;
+		};
+		5B2C72E6263468B900CE4F88 = {
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "walkingpad-client/walkingpad_client.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "walkingpad-client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.0.2;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "klassm.walkingpad-client";
+				PRODUCT_NAME = "Walkingpad Client";
+				SWIFT_VERSION = 5.0;
+			};
+			isa = XCBuildConfiguration;
+			name = Debug;
+		};
+		5B2C72E7263468B900CE4F88 = {
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "walkingpad-client/walkingpad_client.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				COMPILER_INDEX_STORE_ENABLE = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "walkingpad-client/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.0.2;
+				NEW_SETTING = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "klassm.walkingpad-client";
+				PRODUCT_NAME = "Walkingpad Client";
+				SWIFT_VERSION = 5.0;
+			};
+			isa = XCBuildConfiguration;
+			name = Release;
+		};
+		5EA914A218813F3DAB396AB5 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = Change.swift;
+			sourceTree = "<group>";
+		};
+		5F12476A8C9CEB21FDE74489 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = RunningView.swift;
+			sourceTree = "<group>";
+		};
+		637A6D619C6237F65B7CDB47 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WalkingpadTheme.swift;
+			sourceTree = "<group>";
+		};
+		63A4066E1F91C37894452C7B = {
+			fileRef = 1B7A594082F5ABF6334C45D8;
+			isa = PBXBuildFile;
+		};
+		6A09E5BCDC8483A33BF416D7 = {
+			fileRef = AF295598EB24B5E602A3D9FA;
+			isa = PBXBuildFile;
+		};
+		6BFB36D20F5346332C16CCC4 = {
+			fileRef = 076D1CF0C98F7A8AA6F9189A;
+			isa = PBXBuildFile;
+		};
+		6C5C3FCE43391FD399152208 = {
+			fileRef = 391EA383A613D5031A9D01B1;
+			isa = PBXBuildFile;
+		};
+		6C9E831395B9CD28C6E197F6 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WalkingpadComponents.swift;
+			sourceTree = "<group>";
+		};
+		7203B5FD1407775D894B815A = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = DeviceView.swift;
+			sourceTree = "<group>";
+		};
+		763A4F672263CE4B3A78898A = {
+			fileRef = 036525505E278EBC3398A786;
+			isa = PBXBuildFile;
+		};
+		77D2BFFE6FD64C90A02D7DC8 = {
+			fileRef = 3BB5AA15741819D0095D0F2F;
+			isa = PBXBuildFile;
+		};
+		7C6D281F9E89290204559A83 = {
+			fileRef = E3B4D55DE64660AA18082A91;
+			isa = PBXBuildFile;
+		};
+		836F277779BC42778D1519E0 = {
+			fileRef = 05B39C11FD9AF40A30C0B19C;
+			isa = PBXBuildFile;
+		};
+		8895EA55F9FA45E54DA3C5C4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = ContentView.swift;
+			sourceTree = "<group>";
+		};
+		8DF1D5FFFC5AAD8CC8E76BA0 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HCGatewayFacade.swift;
+			sourceTree = "<group>";
+		};
+		940FB1A525FA171B2BA06CD3 = {
+			fileRef = 8DF1D5FFFC5AAD8CC8E76BA0;
+			isa = PBXBuildFile;
+		};
+		95BBC3E780696D814A4D2A4D = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = FileSystem.swift;
+			sourceTree = "<group>";
+		};
+		96F55BAB069721B82E7AC0BC = {
+			fileRef = BEC821C68B805493582F58A9;
+			isa = PBXBuildFile;
+		};
+		9BEBF595312E0F21CAC491C0 = {
+			fileRef = B2F8B4E25EBA00E9A6224FCC;
+			isa = PBXBuildFile;
+		};
+		9ED9F3EDF3CEDD95D361FF68 = {
+			fileRef = D98E1F688B58CDE93E0E04E4;
+			isa = PBXBuildFile;
+		};
+		9F6AF5910D3E91B39B53FA18 = {
+			fileRef = 170A2313995CEE1CF2E1591E;
+			isa = PBXBuildFile;
+		};
+		A0D8FA32C7AE5AE3F13A8F3F = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WorkoutsSaveData.swift;
+			sourceTree = "<group>";
+		};
+		A642198472B06CCF1D3BF629 = {
+			fileRef = A0D8FA32C7AE5AE3F13A8F3F;
+			isa = PBXBuildFile;
+		};
+		AA3384A62D1B14149EA03106 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = LoginLogoutButton.swift;
+			sourceTree = "<group>";
+		};
+		AE05D572DC36A6EA6E149B9F = {
+			isa = PBXBuildFile;
+			productRef = 50B9185570255A34168E8059;
+		};
+		AF295598EB24B5E602A3D9FA = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WorkoutStateView.swift;
+			sourceTree = "<group>";
+		};
+		B0FEE79FEBF546E3AF2D9E37 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = StepsUploader.swift;
+			sourceTree = "<group>";
+		};
+		B23994D3F4CC2F3DF7F9803E = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = MenuBarPresentation.swift;
+			sourceTree = "<group>";
+		};
+		B2F8B4E25EBA00E9A6224FCC = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = FooterView.swift;
+			sourceTree = "<group>";
+		};
+		B89205BD3449C6221CFDC9BA = {
+			fileRef = B0FEE79FEBF546E3AF2D9E37;
+			isa = PBXBuildFile;
+		};
+		B96F679C6FA208C8BC0D3A4E = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = StoppedOrPauseView.swift;
+			sourceTree = "<group>";
+		};
+		BEC821C68B805493582F58A9 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = BluetoothDiscoveryService.swift;
+			sourceTree = "<group>";
+		};
+		C17B8238E8B06652BD9159F1 = {
+			fileRef = 5EA914A218813F3DAB396AB5;
+			isa = PBXBuildFile;
+		};
+		C1879BAF2EBC80DCFD96AB7E = {
+			fileRef = 6C9E831395B9CD28C6E197F6;
+			isa = PBXBuildFile;
+		};
+		C1B2C2AC48DBA700B5C4AC61 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WaitingForTreadmillView.swift;
+			sourceTree = "<group>";
+		};
+		CF8A4D27E1C506A7C75A76BE = {
+			fileRef = 3685E330EC5277A9DD5661C6;
+			isa = PBXBuildFile;
+		};
+		D264EF5C626621CAD2604DEE = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = DateExtension.swift;
+			sourceTree = "<group>";
+		};
+		D520219EFA46AE7F037D2790 = {
+			fileRef = 5F12476A8C9CEB21FDE74489;
+			isa = PBXBuildFile;
+		};
+		D7F21AA502FE7D90F9CC95EF = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/envoy/Embassy.git";
+			requirement = {
+				kind = exactVersion;
+				version = 4.1.6;
+			};
+		};
+		D98E1F688B58CDE93E0E04E4 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WalkingPadCommand.swift;
+			sourceTree = "<group>";
+		};
+		E02B70E2E631F7EFFE68A28A = {
+			fileRef = AA3384A62D1B14149EA03106;
+			isa = PBXBuildFile;
+		};
+		E08B0952A0A1C3C3F33C9D7E = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = MqttService.swift;
+			sourceTree = "<group>";
+		};
+		E3B4D55DE64660AA18082A91 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = HttpApi.swift;
+			sourceTree = "<group>";
+		};
+		E85CC1A6CB8C3FB44040A2CF = {
+			fileRef = 43E4EE43A7AD5853B2DC1ADA;
+			isa = PBXBuildFile;
+		};
+		E87A576BC3491CDB58F52647 = {
+			fileRef = 3874C63E7640910656AEB826;
+			isa = PBXBuildFile;
+		};
+		ECB93A97F9D8BECB8B1A0538 = {
+			fileRef = 4FF77F01275EEB495764B340;
+			isa = PBXBuildFile;
+		};
+		F09D1CF7648F7C1CF522195C = {
+			fileRef = B23994D3F4CC2F3DF7F9803E;
+			isa = PBXBuildFile;
+		};
+		BCB338BF6A2FB49A0486CA60 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text;
+			path = LICENSE;
+			sourceTree = "<group>";
+		};
+		AA4ACA445B3FBAF47CDE31AC = {
+			isa = PBXFileReference;
+			lastKnownFileType = net.daringfireball.markdown;
+			path = README.md;
+			sourceTree = "<group>";
+		};
+		CE056731EA66F3793BB92B1F = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = bluetooth_connection.png;
+			sourceTree = "<group>";
+		};
+		1B4FFFFBDA5103C7E9E4DCCA = {
+			isa = PBXGroup;
+			children = (C787362EA10F4FBFB85610FD, 10463EAD20ACECB31F951CAC, CE056731EA66F3793BB92B1F, E7B422070B26CDDACDEE89B1, 0672DB66636EED8871BA6744, 330874B5467E744738411391);
+			path = docs;
+			sourceTree = "<group>";
+		};
+		E7B422070B26CDDACDEE89B1 = {
+			isa = PBXFileReference;
+			lastKnownFileType = net.daringfireball.markdown;
+			path = "design-system.md";
+			sourceTree = "<group>";
+		};
+		1CF473FA341CDC2ED78DCD24 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = "menubar-dark.png";
+			sourceTree = "<group>";
+		};
+		C787362EA10F4FBFB85610FD = {
+			isa = PBXGroup;
+			children = (1CF473FA341CDC2ED78DCD24, 105EAC28C5B88EE9807BCE3E);
+			path = images;
+			sourceTree = "<group>";
+		};
+		105EAC28C5B88EE9807BCE3E = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = "menubar-light.png";
+			sourceTree = "<group>";
+		};
+		0672DB66636EED8871BA6744 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = stats.png;
+			sourceTree = "<group>";
+		};
+		B5B0AA7FBCA73F6769A79D49 = {
+			isa = PBXFileReference;
+			lastKnownFileType = net.daringfireball.markdown;
+			path = "2026-10-12-menubar-design.md";
+			sourceTree = "<group>";
+		};
+		0CB7138D17427C0915D72387 = {
+			isa = PBXGroup;
+			children = (B5B0AA7FBCA73F6769A79D49);
+			path = plans;
+			sourceTree = "<group>";
+		};
+		10463EAD20ACECB31F951CAC = {
+			isa = PBXGroup;
+			children = (0CB7138D17427C0915D72387, A81C68F24A2BA05CB98A4780);
+			path = superpowers;
+			sourceTree = "<group>";
+		};
+		3034CEEDCF32494D23C49C64 = {
+			isa = PBXFileReference;
+			lastKnownFileType = net.daringfireball.markdown;
+			path = "2026-10-12-menubar-design.md";
+			sourceTree = "<group>";
+		};
+		A81C68F24A2BA05CB98A4780 = {
+			isa = PBXGroup;
+			children = (3034CEEDCF32494D23C49C64);
+			path = specs;
+			sourceTree = "<group>";
+		};
+		330874B5467E744738411391 = {
+			isa = PBXFileReference;
+			lastKnownFileType = image.png;
+			path = tray_app.png;
+			sourceTree = "<group>";
+		};
+		F498362A56D08F1C54C8DA86 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = MenuBarPresentationTests.swift;
+			sourceTree = "<group>";
+		};
+		EEFE21A1443933CA4DE017DA = {
+			isa = PBXGroup;
+			children = (F498362A56D08F1C54C8DA86, AF9D9B52739C4A0EEF8BDE6F, 16C8879C0860417CC93B30B5, F460B44D8AA92B5E4688EF81, D18CC98E84E453217469699F, 1150EF26894EE2B3A0D82988, 306A0F25BC66C6E3D1B70259, 10DFA3BC36B0CD4F0DB8A7C8, 6B79C8DBA86115ECAA52B604);
+			path = tests;
+			sourceTree = "<group>";
+		};
+		16C8879C0860417CC93B30B5 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = RenderMenuBarPreview.swift;
+			sourceTree = "<group>";
+		};
+		10DFA3BC36B0CD4F0DB8A7C8 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = ThemeContrastTests.swift;
+			sourceTree = "<group>";
+		};
+		6B79C8DBA86115ECAA52B604 = {
+			isa = PBXFileReference;
+			lastKnownFileType = sourcecode.swift;
+			path = WorkoutStatsTests.swift;
+			sourceTree = "<group>";
+		};
+		AF9D9B52739C4A0EEF8BDE6F = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.script.sh;
+			path = "render-menu-preview.sh";
+			sourceTree = "<group>";
+		};
+		F460B44D8AA92B5E4688EF81 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.script.sh;
+			path = "run-menubar-presentation.sh";
+			sourceTree = "<group>";
+		};
+		D18CC98E84E453217469699F = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.script.sh;
+			path = "run-tests.sh";
+			sourceTree = "<group>";
+		};
+		1150EF26894EE2B3A0D82988 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.script.sh;
+			path = "run-theme-contrast.sh";
+			sourceTree = "<group>";
+		};
+		306A0F25BC66C6E3D1B70259 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.script.sh;
+			path = "run-workout-stats.sh";
+			sourceTree = "<group>";
+		};
+		C91938976F1A419925A88B81 = {
+			isa = PBXGroup;
+			children = (DC5396A0ACE892DEA2BC4106, ADE7CE6CD958873EA706166C, 6A9A065167278C9AC1852DA4, 223D3D9A49C2EAF40FD24517, D1F194B8D73DDB247F1922E2, 9172699A64149394E0908B9F, 3685E330EC5277A9DD5661C6, 692C6D1F1D89077EBF217244, 1E1266D96BBDA4445829747A, 43E4EE43A7AD5853B2DC1ADA);
+			path = "walkingpad-client";
+			sourceTree = "<group>";
+		};
+		692C6D1F1D89077EBF217244 = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.xml;
+			path = Info.plist;
+			sourceTree = "<group>";
+		};
+		1A1A3025F65C3EACBC1D9228 = {
+			isa = PBXFileReference;
+			lastKnownFileType = folder.assetcatalog;
+			path = "Preview Assets.xcassets";
+			sourceTree = "<group>";
+		};
+		6A9A065167278C9AC1852DA4 = {
+			isa = PBXGroup;
+			children = (1A1A3025F65C3EACBC1D9228);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC5396A0ACE892DEA2BC4106 = {
+			isa = PBXGroup;
+			children = (6C9E831395B9CD28C6E197F6, 05B39C11FD9AF40A30C0B19C, 637A6D619C6237F65B7CDB47);
+			path = designSystem;
+			sourceTree = "<group>";
+		};
+		ADE7CE6CD958873EA706166C = {
+			isa = PBXGroup;
+			children = (5EA914A218813F3DAB396AB5, 391EA383A613D5031A9D01B1, B23994D3F4CC2F3DF7F9803E, A0D8FA32C7AE5AE3F13A8F3F);
+			path = models;
+			sourceTree = "<group>";
+		};
+		223D3D9A49C2EAF40FD24517 = {
+			isa = PBXGroup;
+			children = (9C94CB9F791E7A94D54996A5, BEC821C68B805493582F58A9, 4FF77F01275EEB495764B340, 95BBC3E780696D814A4D2A4D, 8DF1D5FFFC5AAD8CC8E76BA0, 3874C63E7640910656AEB826, E3B4D55DE64660AA18082A91, E08B0952A0A1C3C3F33C9D7E, 170A2313995CEE1CF2E1591E, B0FEE79FEBF546E3AF2D9E37, 3BB5AA15741819D0095D0F2F);
+			path = services;
+			sourceTree = "<group>";
+		};
+		9C94CB9F791E7A94D54996A5 = {
+			isa = PBXGroup;
+			children = (D98E1F688B58CDE93E0E04E4, 1B7A594082F5ABF6334C45D8);
+			path = walkingPad;
+			sourceTree = "<group>";
+		};
+		D1F194B8D73DDB247F1922E2 = {
+			isa = PBXGroup;
+			children = (D264EF5C626621CAD2604DEE);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		9172699A64149394E0908B9F = {
+			isa = PBXGroup;
+			children = (8895EA55F9FA45E54DA3C5C4, 7203B5FD1407775D894B815A, 5707D6644D0B45114CFDFBFB, B2F8B4E25EBA00E9A6224FCC, AA3384A62D1B14149EA03106, 036525505E278EBC3398A786, 076D1CF0C98F7A8AA6F9189A, 5F12476A8C9CEB21FDE74489, B96F679C6FA208C8BC0D3A4E, C1B2C2AC48DBA700B5C4AC61, AF295598EB24B5E602A3D9FA);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1E1266D96BBDA4445829747A = {
+			isa = PBXFileReference;
+			lastKnownFileType = text.plist.entitlements;
+			path = walkingpad_client.entitlements;
+			sourceTree = "<group>";
+		};
+	};
+	rootObject = 5B2C72CD263468B800CE4F88;
+}
