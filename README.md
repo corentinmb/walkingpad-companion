@@ -53,6 +53,8 @@ The [design system](docs/design-system.md) lives in `walkingpad-client/designSys
 
 ## Credits and license
 
-Walkingpad Companion continues the WalkingPad macOS client originally created by Matthias Klass. The Bluetooth implementation was inspired by [ph4r05/ph4-walkingpad](https://github.com/ph4r05/ph4-walkingpad). Optional fitness synchronization uses [HCGateway](https://github.com/ShuchirJ/HCGateway).
+Walkingpad Companion is an independently maintained fork of [WalkingPad macOS Client](https://github.com/klassm/walkingpad_macos_client), originally created by Matthias Klass.
+
+The Bluetooth implementation was inspired by [ph4r05/ph4-walkingpad](https://github.com/ph4r05/ph4-walkingpad). Optional fitness synchronization uses [HCGateway](https://github.com/ShuchirJ/HCGateway).
 
 Licensed under [Apache 2.0](LICENSE).
