@@ -131,9 +131,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             .environmentObject(hcGatewayService)
         
         self.popover = NSPopover()
-        self.popover.contentSize = NSSize(width: 200, height: 250)
         self.popover.behavior = .transient
-        self.popover.contentViewController = NSHostingController(rootView: contentView)
+        let hostingController = NSHostingController(rootView: contentView)
+        self.popover.contentViewController = hostingController
+        self.popover.contentSize = hostingController.view.fittingSize
 
         self.statusBarItem = NSStatusBar.system.statusItem(withLength: CGFloat(NSStatusItem.variableLength))
         if let button = self.statusBarItem.button {

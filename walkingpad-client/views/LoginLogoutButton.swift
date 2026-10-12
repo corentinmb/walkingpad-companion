@@ -6,12 +6,16 @@ struct LoginLogoutButton: View {
     
     var body: some View {
         if (!gatewayService.isLoggedIn()) {
-            Button("Login") {
+            Button {
                 openLoginWindow()
+            } label: {
+                Label("Login", systemImage: "person.crop.circle")
             }
         } else {
-            Button("Logout") {
+            Button {
                 gatewayService.logout()
+            } label: {
+                Label("Logout", systemImage: "person.crop.circle.badge.checkmark")
             }
         }
     }

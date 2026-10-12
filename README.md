@@ -78,3 +78,15 @@ mqtt:
 ### Credits
 
 The implementation is heavily inspired by [ph4r05/ph4-walkingpad](https://github.com/ph4r05/ph4-walkingpad).
+
+### Local development
+
+Open `walkingpad-client.xcodeproj`, select the `walkingpad-client` scheme and run with **⌘R**. Requires macOS 13+ and Xcode with the macOS SDK. Swift packages resolve automatically; local builds use ad-hoc signing. Quit an existing Walkingpad instance before running to free port 4934.
+
+The menu UI uses a reusable SwiftUI [design system](docs/design-system.md) under `walkingpad-client/designSystem/`. Its daily step goal is configurable from the goal label below the ring.
+
+Run the regression checks with:
+
+```sh
+sh tests/run-tests.sh
+```
