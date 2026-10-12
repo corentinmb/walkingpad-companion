@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5B2C72D4263468B800CE4F88"
-               BuildableName = "Walkingpad Client.app"
+               BuildableName = "Walkingpad Companion.app"
                BlueprintName = "walkingpad-client"
                ReferencedContainer = "container:walkingpad-client.xcodeproj">
             </BuildableReference>
@@ -45,7 +45,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B2C72D4263468B800CE4F88"
-            BuildableName = "Walkingpad Client.app"
+            BuildableName = "Walkingpad Companion.app"
             BlueprintName = "walkingpad-client"
             ReferencedContainer = "container:walkingpad-client.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5B2C72D4263468B800CE4F88"
-            BuildableName = "Walkingpad Client.app"
+            BuildableName = "Walkingpad Companion.app"
             BlueprintName = "walkingpad-client"
             ReferencedContainer = "container:walkingpad-client.xcodeproj">
          </BuildableReference>

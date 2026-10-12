@@ -202,7 +202,7 @@
 		5B2C72D5263468B800CE4F88 = {
 			explicitFileType = wrapper.application;
 			isa = PBXFileReference;
-			path = "Walkingpad Client.app";
+			path = "Walkingpad Companion.app";
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		5B2C72D6263468B800CE4F88 = {
@@ -347,10 +347,10 @@
 				INFOPLIST_FILE = "walkingpad-client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.1.0;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "klassm.walkingpad-client";
-				PRODUCT_NAME = "Walkingpad Client";
+				PRODUCT_NAME = "Walkingpad Companion";
 				SWIFT_VERSION = 5.0;
 			};
 			isa = XCBuildConfiguration;
@@ -370,10 +370,10 @@
 				INFOPLIST_FILE = "walkingpad-client/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.1.0;
 				NEW_SETTING = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "klassm.walkingpad-client";
-				PRODUCT_NAME = "Walkingpad Client";
+				PRODUCT_NAME = "Walkingpad Companion";
 				SWIFT_VERSION = 5.0;
 			};
 			isa = XCBuildConfiguration;

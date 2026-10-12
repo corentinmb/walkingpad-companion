@@ -1,92 +1,58 @@
-#  WalkingPad MacOS Client
+<p align="center"><img src="site/assets/icon.png" width="96" alt="Walkingpad Companion icon"></p>
 
-A native MacOS Client (as status bar app) to watch your steps.
+<h1 align="center">Walkingpad Companion</h1>
+<p align="center">Keep moving while you work.<br>A native macOS menu bar companion for your WalkingPad.</p>
+<p align="center"><a href="https://corentinmb.github.io/walkingpad-companion/">Website</a> · <a href="https://github.com/corentinmb/walkingpad-companion/releases">Downloads</a> · <a href="docs/releases.md">Build & release</a></p>
 
+<p align="center"><img src="docs/images/menubar-light.png" width="280" alt="Light menu with daily goal, steps and treadmill controls"> <img src="docs/images/menubar-dark.png" width="280" alt="Dark menu with daily goal, steps and treadmill controls"></p>
 
-### Features
+## A little motivation, right in your menu bar
 
-* Connect to your treadmill via Bluetooth
-* Watch your steps, the app will accumulate the steps
-* You can change the speed directly in the app
-* GoogleFit support - connect the app to your Google Fit account. Whenever you pause or stop the treadmill, the steps will be uploaded to Google Fit.
-* Statistics - the app will remember the times you walked before and give you some statistics on how much you have walked in the past
-* [Alfred](https://www.alfredapp.com/) Workflow to control your treadmill by keystroke. You can download the workflow [here](https://github.com/klassm/walkingpad_alfred/releases)
-* Publish the WalkingPad state as MQTT message (>= 0.0.3)
+- **Your day at a glance.** Live steps, walking time and distance, with a personal daily step goal.
+- **Treadmill controls.** Start, stop and adjust speed over Bluetooth; switch between manual and automatic mode.
+- **A native interface.** SwiftUI, light and dark appearances, keyboard navigation and accessible controls.
+- **Your walking history.** Saved workouts and statistics, including the active session.
+- **Optional integrations.** MQTT for home automation and HCGateway for uploading steps.
 
-### Installation
+## Get started
 
-Download the latest release from the [releases section](https://github.com/klassm/walkingpad_macos_client/releases).
+Requires **macOS 13 or later** and a compatible WalkingPad. Bluetooth support depends on the model; this project does not maintain a complete compatibility list.
 
-Please make sure to grant the app Bluetooth permissions, to ensure the app can communicate with the WalkingPad device.
+Download a DMG or ZIP from [Releases](https://github.com/corentinmb/walkingpad-companion/releases), when available. Open the DMG, drag **Walkingpad Companion** to Applications, then launch it and allow Bluetooth access. Turn on your treadmill and open the menu bar icon.
 
-![Bluetooth Permission](docs/bluetooth_connection.png)
+The initial automated releases use ad-hoc signing. macOS may require approval in **System Settings → Privacy & Security → Open Anyway** after attempting to open the app. See [distribution and notarization](docs/releases.md) for Developer ID builds.
 
-#### MQTT Configuration
+Click the goal below the ring to change your daily target. Choose Steps, Time or Distance to change the central metric. The ring always represents your daily step goal.
 
-You can publish the current WalkingPad state as MQTT message. An example use case is to use the current state
-for automations in your favorite home automation tool like Home Assistant.
+[Usage, statistics and integrations →](docs/usage.md)
 
-To configure the app to use MQTT, you need to provide a config file containing the connection data. Please
-place this file in `~/Library/Containers/klassm.walkingpad-client/Data/Library/Autosave Information/.walkingpad-client-mqtt.json`
-(this is quite a complex path, however it does not require any additional permissions to read it).
+## Build locally
 
-```json
-{
-  "username": "myusername",
-  "password": "mypassword",
-  "host": "192.168.0.73",
-  "port": 1883,
-  "topic": "homeassistant/sensor/walkingpad"
-}
+Install Xcode with the macOS SDK, then:
+
+```sh
+./scripts/build-app.sh
+open "dist/Walkingpad Companion.app"
 ```
 
-The app will automatically read the config data and start to publish messages.
+This builds a universal app for Apple Silicon and Intel. For a faster local build, use `WALKINGPAD_ARCHS="$(uname -m)" ./scripts/build-app.sh debug`. Quit any existing instance first: the local statistics server uses port 4934.
 
-An example message looks like the following:
-```
-{
-    "speedKmh":1.5,
-    "stepsTotal":19202,
-    "distanceTotal":4690,
-    "stepsWalkingpad":510
-}
-```
-
-Home Assistant can afterwards be configured to read the data.
-
-```yaml
-mqtt:
-  sensor:
-    - name: "WalkingPad Speed"
-      object_id: "walkingpad_speed"
-      state_topic: "homeassistant/sensor/walkingpad"
-      value_template: "{{ value_json.speedKmh }}"
-      unit_of_measurement: "km/h"
-    - name: "WalkingPad Steps"
-      object_id: "walkingpad_steps"
-      state_topic: "homeassistant/sensor/walkingpad"
-      value_template: "{{ value_json.stepsTotal }}"
-      unit_of_measurement: "Steps"
-```
-
-### Screenshots
-
-![Tray App](docs/tray_app.png)
-![Stats](docs/stats.png)
-
-
-### Credits
-
-The implementation is heavily inspired by [ph4r05/ph4-walkingpad](https://github.com/ph4r05/ph4-walkingpad).
-
-### Local development
-
-Open `walkingpad-client.xcodeproj`, select the `walkingpad-client` scheme and run with **⌘R**. Requires macOS 13+ and Xcode with the macOS SDK. Swift packages resolve automatically; local builds use ad-hoc signing. Quit an existing Walkingpad instance before running to free port 4934.
-
-The menu UI uses a reusable SwiftUI [design system](docs/design-system.md) under `walkingpad-client/designSystem/`. Its daily step goal is configurable from the goal label below the ring.
-
-Run the regression checks with:
+For development, open `walkingpad-client.xcodeproj`, select the `walkingpad-client` scheme and press **⌘R**. The tracked project uses local ad-hoc signing without a personal development team. Swift packages resolve automatically.
 
 ```sh
 sh tests/run-tests.sh
+python3 -m unittest discover -s tests -p 'test_*.py'
+./scripts/build-release.sh
 ```
+
+Build output stays in ignored `.build/` and `dist/` directories. [Release instructions](docs/releases.md) cover archives, checksums, version tags and optional notarization.
+
+## Built to be reused
+
+The [design system](docs/design-system.md) lives in `walkingpad-client/designSystem/`: semantic colors, typography, spacing and reusable SwiftUI components. Presentation models keep formatting and control rules separate from Bluetooth services. [UI preview snapshots](tests/render-menu-preview.sh) run without a treadmill.
+
+## Credits and license
+
+Walkingpad Companion continues the WalkingPad macOS client originally created by Matthias Klass. The Bluetooth implementation was inspired by [ph4r05/ph4-walkingpad](https://github.com/ph4r05/ph4-walkingpad). Optional fitness synchronization uses [HCGateway](https://github.com/ShuchirJ/HCGateway).
+
+Licensed under [Apache 2.0](LICENSE).

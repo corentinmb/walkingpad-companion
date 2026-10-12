@@ -1,0 +1,19 @@
+name: Checks
+on:
+  pull_request:
+  push:
+    branches: [master]
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v6
+      - name: Regression checks
+        run: |
+          sh tests/run-tests.sh
+          python3 -m unittest discover -s tests -p 'test_*.py'
+          for script in scripts/*.sh; do bash -n "$script"; done
+      - name: Build native app
+        run: WALKINGPAD_ARCHS="$(uname -m)" ./scripts/build-app.sh debug
