@@ -3,3 +3,8 @@ Carthage
 .DS_Store
 walkingpad-client.xcodeproj/project.xcworkspace/xcuserdata
 walkingpad-client.xcodeproj/xcuserdata
+
+# Generated builds and local test caches
+.build/
+dist/
+__pycache__/

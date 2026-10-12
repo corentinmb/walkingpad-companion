@@ -1,0 +1,36 @@
+name: Draft release
+on:
+  push:
+    tags: ['v[0-9]*']
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: macos-15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+      - name: Validate release version and branch
+        run: |
+          test "$GITHUB_REF_NAME" = "v$(cat VERSION)"
+          git merge-base --is-ancestor "$GITHUB_SHA" origin/master
+      - name: Regression checks
+        run: |
+          sh tests/run-tests.sh
+          python3 -m unittest discover -s tests -p 'test_*.py'
+      - name: Build universal app and archives
+        run: |
+          ./scripts/build-release.sh
+          cd dist
+          shasum -a 256 -c SHA256SUMS
+      - name: Create draft with assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" \
+            --draft --verify-tag --title "Walkingpad Companion $GITHUB_REF_NAME" \
+            --generate-notes --notes-file .github/release-notes.md \
+            dist/*.dmg dist/*.zip dist/SHA256SUMS
