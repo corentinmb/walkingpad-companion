@@ -102,17 +102,23 @@ class Workout: ObservableObject {
     
     public func loadAll() -> [WorkoutSaveData] {
         let jsonDecoder = JSONDecoder()
+        var workouts: [WorkoutSaveData] = []
         do {
             let optionalData = FileSystem().load(filename: "workouts.json")
             if let data = optionalData {
                 let workoutData = try jsonDecoder.decode(WorkoutsSaveData.self, from: data)
-                return workoutData.workouts.suffix(500)
+                workouts = Array(workoutData.workouts.suffix(500))
             }
-            return []
         } catch {
             print("Could not load workout data \(error)")
-            return []
         }
+        // Stats must include the live totals, even before the next save.
+        if self.steps > 0 {
+            workouts.removeAll { Calendar.current.isDate($0.date, inSameDayAs: self.lastUpdateTime) }
+            workouts.append(WorkoutSaveData(steps: self.steps, distance: self.distance,
+                                            walkingSeconds: self.walkingSeconds, date: self.lastUpdateTime))
+        }
+        return workouts
     }
     
     public func workoutState() -> WorkoutState {
