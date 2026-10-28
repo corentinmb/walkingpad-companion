@@ -3,6 +3,20 @@ import Foundation
 
 public typealias OnChangeCallback = (_ change: Change) -> Void
 
+enum StepCalibration {
+    // Personal P1 measurements: 90 real / 165 reported at 2 km/h,
+    // approximately 90 / 110 at 2.5 km/h, and 120 / 100 at 3 km/h.
+    static func factor(speed: Int) -> Double {
+        guard (20...30).contains(speed) else { return 1 }
+        let middle = 90.0 / 110.0
+        if speed <= 25 {
+            let lower = 90.0 / 165.0
+            return lower + (middle - lower) * Double(speed - 20) / 5
+        }
+        return middle + (1.2 - middle) * Double(speed - 25) / 5
+    }
+}
+
 struct WorkoutState {
     var steps: Int
     var distance: Int
@@ -12,6 +26,13 @@ struct WorkoutState {
 class Workout: ObservableObject {
     @Published
     public var steps: Int = 0
+
+    @Published
+    var calibratedStepTotal: Double? = nil
+
+    var calibratedSteps: Int {
+        Int((calibratedStepTotal ?? Double(steps)).rounded())
+    }
     
     @Published
     public var distance: Int = 0
@@ -32,6 +53,7 @@ class Workout: ObservableObject {
         if now.get(.day) != self.lastUpdateTime.get(.day) && self.steps > 0 {
             self.distance = 0
             self.steps = 0
+            self.calibratedStepTotal = 0
             self.walkingSeconds = 0
         }
     }
@@ -63,6 +85,10 @@ class Workout: ObservableObject {
             self.onChangeCallback(change)
         }
         
+        // Keep fractional steps across packets. Only calibrate intervals whose
+        // previous speed is known; a first packet can contain a whole session.
+        let factor = oldState.map { StepCalibration.factor(speed: $0.speed) } ?? 1
+        self.calibratedStepTotal = (self.calibratedStepTotal ?? Double(self.steps)) + Double(stepDiff) * factor
         self.steps = self.steps + stepDiff
         self.distance = self.distance + distanceDiff
         self.walkingSeconds = self.walkingSeconds + walkingTimeDiff
@@ -72,7 +98,8 @@ class Workout: ObservableObject {
     
     
     public func save() {
-        let workoutData = WorkoutSaveData(steps: self.steps, distance: self.distance, walkingSeconds: self.walkingSeconds, date: self.lastUpdateTime)
+        let workoutData = WorkoutSaveData(steps: self.steps, distance: self.distance, walkingSeconds: self.walkingSeconds, date: self.lastUpdateTime,
+                                          calibratedStepTotal: self.calibratedStepTotal)
         let withoutToday = loadAll().filter { !Calendar.current.isDateInToday($0.date)}
         let newData = withoutToday + [workoutData];
         
@@ -94,6 +121,7 @@ class Workout: ObservableObject {
     
         if let foundWorkout = workout {
             self.steps = foundWorkout.steps
+            self.calibratedStepTotal = foundWorkout.calibratedStepTotal
             self.distance = foundWorkout.distance
             self.walkingSeconds = foundWorkout.walkingSeconds
             self.lastUpdateTime = foundWorkout.date
@@ -116,7 +144,8 @@ class Workout: ObservableObject {
         if self.steps > 0 {
             workouts.removeAll { Calendar.current.isDate($0.date, inSameDayAs: self.lastUpdateTime) }
             workouts.append(WorkoutSaveData(steps: self.steps, distance: self.distance,
-                                            walkingSeconds: self.walkingSeconds, date: self.lastUpdateTime))
+                                            walkingSeconds: self.walkingSeconds, date: self.lastUpdateTime,
+                                            calibratedStepTotal: self.calibratedStepTotal))
         }
         return workouts
     }

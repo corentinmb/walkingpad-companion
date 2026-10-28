@@ -16,7 +16,7 @@ struct RenderWalkingpadMenu {
                     speed: running ? 25 : 0, steps: 10085, distance: 3050,
                     walkingMode: stateName == "automatic" ? .automatic : .manual,
                     deviceName: "Walkingpad", statusType: .currentStatus) : nil
-                let view = MenuBarPanel(summary: WorkoutSummary(steps: 10085, distance: 3050, walkingSeconds: 5563),
+                let view = MenuBarPanel(summary: WorkoutSummary(steps: 5501, distance: 3050, walkingSeconds: 5563, rawSteps: 10085),
                     connected: connected, device: state, dailyStepGoal: .constant(12000),
                     startOrStop: {}, changeSpeed: { _ in }, changeMode: { _ in }) {
                         HStack {

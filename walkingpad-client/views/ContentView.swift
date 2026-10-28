@@ -7,8 +7,8 @@ struct ContentView: View {
 
     var body: some View {
         MenuBarPanel(
-            summary: WorkoutSummary(steps: workout.steps, distance: workout.distance,
-                                    walkingSeconds: workout.walkingSeconds),
+            summary: WorkoutSummary(steps: workout.calibratedSteps, distance: workout.distance,
+                                    walkingSeconds: workout.walkingSeconds, rawSteps: workout.steps),
             connected: walkingPadService.isConnected(),
             device: walkingPadService.lastStatus(),
             dailyStepGoal: $dailyStepGoal,

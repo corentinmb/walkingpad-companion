@@ -5,6 +5,7 @@ struct WorkoutSaveData: Codable {
     var distance: Int
     var walkingSeconds: Int
     var date: Date
+    var calibratedStepTotal: Double? = nil
 }
 
 

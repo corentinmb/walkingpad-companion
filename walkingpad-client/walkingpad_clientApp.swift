@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         super.init()
         
-        self.updateTimer = RepeatingTimer(interval: 5, eventHandler: {
+        self.updateTimer = RepeatingTimer(interval: 0.5, eventHandler: {
             self.workout.resetIfDateChanged()
             self.walkingPadService.command()?.updateStatus()
         })
@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             DispatchQueue.main.async {
                 self.updateStatusBarIcon(connected: self.walkingPadService.isConnected(), speed: newState.speed)
                 if newState.speed > 0 {
-                    self.statusBarItem?.button?.title = " \(self.workout.steps)"
+                    self.statusBarItem?.button?.title = " \(self.workout.calibratedSteps)"
                 } else {
                     self.statusBarItem?.button?.title = ""
                 }

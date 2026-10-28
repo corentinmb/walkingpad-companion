@@ -45,6 +45,17 @@ struct MenuBarPanel<Footer: View>: View {
             }
             .padding(.top, WalkingpadTheme.Spacing.small)
 
+            if let rawSteps = summary.rawSteps {
+                VStack(spacing: WalkingpadTheme.Spacing.tiny) {
+                    Text("Estimated · \(WorkoutSummary.integer(summary.steps)) steps")
+                    Text("P1 raw · \(WorkoutSummary.integer(rawSteps)) steps")
+                }
+                .font(WalkingpadTheme.Typography.detail)
+                .monospacedDigit()
+                .foregroundStyle(WalkingpadTheme.Colors.secondaryText)
+                .help("Personal calibration: ×0.545 at 2 km/h, ×0.818 at 2.5 km/h, ×1.20 at 3 km/h; interpolated between. Other speeds and earlier uncalibrated steps use the raw count. The ring uses estimated steps.")
+            }
+
             Button { showingGoal.toggle() } label: {
                 Label("\(Int(progress * 100))% of \(WorkoutSummary.integer(goal)) steps", systemImage: "target")
             }

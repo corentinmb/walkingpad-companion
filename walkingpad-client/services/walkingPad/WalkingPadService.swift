@@ -11,6 +11,13 @@ public struct WalkingPadConnection {
 
 open class WalkingPadService: NSObject, CBPeripheralDelegate, ObservableObject {
 
+    static let streamsBluetoothSteps = CommandLine.arguments.contains("--bluetooth-steps")
+    private let streamTimestamp: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
+
     private var connection: WalkingPadConnection?
     @Published
     private var lastState: DeviceState? = nil
@@ -89,13 +96,9 @@ open class WalkingPadService: NSObject, CBPeripheralDelegate, ObservableObject {
         if let value = characteristic.value {
             
             let byteArray = [UInt8](value)
+            guard byteArray.count >= 14 else { return }
             guard let statusType = statusTypeFrom(Array(byteArray[0...2])) else { return }
             guard let connection = self.connection else { return }
-            
-            if (byteArray.count < 13) {
-                print("Unknown status array length")
-                return
-            }
             
             let speed = byteArray[3]
             let isManualMode = byteArray[4] == 1
@@ -113,6 +116,14 @@ open class WalkingPadService: NSObject, CBPeripheralDelegate, ObservableObject {
                 deviceName: connection.peripheral.name ?? "unknown",
                 statusType: statusType
             )
+
+            if Self.streamsBluetoothSteps {
+                let kind = statusType == .currentStatus ? "current" : "last"
+                let rawSteps = byteArray[11...13].map { String(format: "%02X", $0) }.joined(separator: " ")
+                let line = "[Bluetooth] \(streamTimestamp.string(from: status.time)) type=\(kind) steps=\(steps) distance_m=\(distance) time_s=\(walkingTimeSeconds) speed_kmh=\(status.speedKmh()) raw_steps=\(rawSteps)\n"
+                // Bypass stdio buffering, including when stdout is piped.
+                FileHandle.standardOutput.write(Data(line.utf8))
+            }
             
             self.callback?(self.lastState, status)
             self.lastState = status

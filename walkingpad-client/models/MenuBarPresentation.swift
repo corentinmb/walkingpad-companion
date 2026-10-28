@@ -25,6 +25,7 @@ struct WorkoutSummary {
     let steps: Int
     let distance: Int
     let walkingSeconds: Int
+    var rawSteps: Int? = nil
 
     static let defaultGoal = 12_000
     static let goalRange = 1_000...50_000
