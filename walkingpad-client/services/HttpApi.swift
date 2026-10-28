@@ -19,7 +19,8 @@ func startHttpServer(walkingPadService: WalkingPadService, workout: Workout) {
     let loop = try! SelectorEventLoop(selector: try! KqueueSelector())
     let dateFormatter = DateFormatter()
     dateFormatter.dateFormat = "yyyy-MM-dd"
-    let server = DefaultHTTPServer(eventLoop: loop, port: 4934) {
+    // Keep optional integrations on IPv4 loopback; Embassy defaults to IPv6 ::1.
+    let server = DefaultHTTPServer(eventLoop: loop, interface: "127.0.0.1", port: 4934) {
         (
             environ: [String: Any],
             startResponse: @escaping ((String, [(String, String)]) -> Void),
@@ -107,7 +108,7 @@ func startHttpServer(walkingPadService: WalkingPadService, workout: Workout) {
 
                         let workouts = workout.loadAll()
                         let toEncode = workouts.map{WorkoutApiData(
-                            steps: $0.steps,
+                            steps: $0.calibratedSteps,
                             distance: $0.distance,
                             walkingSeconds: $0.walkingSeconds,
                             date: dateFormatter.string(from: $0.date)
@@ -121,7 +122,7 @@ func startHttpServer(walkingPadService: WalkingPadService, workout: Workout) {
                 } else if (path == "/treadmill") {
                     let jsonEncoder = JSONEncoder()
                     let toEncode = TreadmillState(
-                        steps: workout.steps,
+                        steps: workout.calibratedSteps,
                         distance: workout.distance,
                         walkingSeconds: workout.walkingSeconds,
                         speed: walkingPadService.lastStatus()?.speedKmh() ?? 0

@@ -3,11 +3,10 @@ import SwiftUI
 struct FooterView: View {
     @EnvironmentObject var walkingPadService: WalkingPadService
     @EnvironmentObject var workout: Workout
-    @Environment(\.openURL) var openURL
 
     var body: some View {
         HStack {
-            Button { openURL(URL(string: "https://walkingpad-stats.netlify.app")!) } label: {
+            Button { WorkoutStatisticsWindow.shared.show(workout: workout) } label: {
                 Label("Stats", systemImage: "chart.bar.xaxis")
             }
             Spacer()

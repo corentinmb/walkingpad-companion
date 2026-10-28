@@ -8,3 +8,13 @@ walkingpad-client.xcodeproj/xcuserdata
 .build/
 dist/
 __pycache__/
+
+# Local credentials and signing material
+.env
+.env.*
+!.env.example
+.walkingpad-client-mqtt.json
+*.p12
+*.pfx
+*.key
+*.pem

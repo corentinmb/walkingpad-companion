@@ -49,15 +49,23 @@ Each new step increment is calibrated using the previously reported speed. Chang
 speed never recalculates earlier increments. Fractional steps are retained before
 rounding for display, and both totals are saved. Earlier saved steps and initial
 session counters without a known speed history stay unchanged, so an existing day's
-estimate may include uncalibrated steps. Distance, Bluetooth logs, API, MQTT and
-fitness uploads retain their original values; KS Fit and the P1 are not modified.
+estimate may include uncalibrated steps. The HTTP API and built-in statistics window use the
+estimated step total, matching Companion. Distance, Bluetooth logs, MQTT and fitness
+uploads retain their original values; KS Fit and the P1 are not modified.
 
-The Stats button opens https://walkingpad-stats.netlify.app/. This is an external statistics viewer, separate from this repository’s presentation website. The app exposes data through its local server on port 4934:
+The Stats button opens a native **Walkingpad Companion** window with today's
+estimated steps, walking time and distance, total steps, best day and saved workout
+history. It observes the same live workout as the menu, so updates arrive directly
+from Companion. It works offline without loading an external website or using a
+browser, HTTP connection or WebSocket.
 
-- `http://localhost:4934/treadmill`: current treadmill state and accumulated statistics.
-- `http://localhost:4934/treadmill/workouts`: workout history.
+For optional integrations, the app still exposes a local HTTP API on IPv4 loopback:
 
-The endpoints return JSON, not an HTML dashboard. Keep the app running to use them. The local server uses the existing Embassy configuration; it is not an authenticated API and should not be exposed publicly.
+- `http://127.0.0.1:4934/treadmill`: current treadmill state and accumulated statistics.
+- `http://127.0.0.1:4934/treadmill/workouts`: workout history.
+
+These endpoints return JSON, not an HTML dashboard. Keep the app running to use
+them. This API is unauthenticated and should not be exposed publicly.
 
 ## Fitness synchronization
 

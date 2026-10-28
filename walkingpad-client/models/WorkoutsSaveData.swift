@@ -6,6 +6,10 @@ struct WorkoutSaveData: Codable {
     var walkingSeconds: Int
     var date: Date
     var calibratedStepTotal: Double? = nil
+
+    var calibratedSteps: Int {
+        Int((calibratedStepTotal ?? Double(steps)).rounded())
+    }
 }
 
 

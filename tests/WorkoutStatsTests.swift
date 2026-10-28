@@ -90,6 +90,11 @@ struct WorkoutStatsTests {
                      "Both raw and calibrated totals must survive saving and loading")
         precondition(restored.loadAll().last?.calibratedStepTotal == restored.calibratedStepTotal,
                      "Live stats must preserve calibration precision")
+        precondition(restored.loadAll().last?.calibratedSteps == 220,
+                     "History exported to Stats must use estimated steps rather than the 275 raw steps")
+        let legacyEntry = WorkoutSaveData(steps: 100, distance: 30, walkingSeconds: 60, date: yesterday)
+        precondition(legacyEntry.calibratedSteps == 100,
+                     "History without speed information must retain its recorded total")
         restored.lastUpdateTime = yesterday
         restored.resetIfDateChanged()
         precondition(restored.steps == 0 && restored.calibratedSteps == 0,
